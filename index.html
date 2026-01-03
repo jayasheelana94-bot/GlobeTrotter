@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>GlobeTrotter - Travel Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      window.process = window.process || {};
+      window.process.env = window.process.env || {};
+      if (typeof window.process.env.API_KEY === 'undefined') {
+        window.process.env.API_KEY = '';
+      }
+    </script>
+    <style>
+        :root {
+            --sat: env(safe-area-inset-top, 0px);
+            --sab: env(safe-area-inset-bottom, 0px);
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            overscroll-behavior-y: contain; /* Prevent pull-to-refresh reload */
+            color: #1e293b;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Fluid Typography for Mobile */
+        html { font-size: 16px; }
+
+        input, textarea, [contenteditable="true"] {
+            user-select: text;
+            -webkit-user-select: text;
+            outline: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        #root {
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Native-like scrolling with bounce */
+        .scroll-container {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            flex: 1;
+        }
+
+        /* Interactive active states */
+        .btn-active:active { transform: scale(0.96); opacity: 0.9; }
+        
+        /* Snap horizontal scrolling */
+        .snap-x-mandatory {
+            scroll-snap-type: x mandatory;
+            display: flex;
+            overflow-x: auto;
+        }
+        .snap-start { scroll-snap-align: start; }
+
+        /* Safe area handling */
+        .safe-top { padding-top: var(--sat); }
+        .safe-bottom { padding-bottom: var(--sab); }
+
+        /* Page transitions */
+        .page-fade-enter { opacity: 0; }
+        .page-fade-enter-active { opacity: 1; transition: opacity 200ms ease-in; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react-dom": "https://esm.sh/react-dom@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "react-router-dom": "https://esm.sh/react-router-dom@6.26.2?deps=react@18.3.1,react-dom@18.3.1",
+        "recharts": "https://esm.sh/recharts@2.12.7?deps=react@18.3.1,react-dom@18.3.1",
+        "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+        "react/": "https://esm.sh/react@18.3.1/",
+        "react-dom/": "https://esm.sh/react-dom@18.3.1/"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>

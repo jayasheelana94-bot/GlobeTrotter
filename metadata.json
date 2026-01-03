@@ -1,0 +1,7 @@
+{
+  "name": "Copy of GlobeTrotter",
+  "description": "A high-fidelity mobile-first travel planning application to create multi-city itineraries, manage budgets, and visualize trips with AI-powered suggestions.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
